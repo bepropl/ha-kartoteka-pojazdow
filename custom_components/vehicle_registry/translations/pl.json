@@ -1,0 +1,277 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Nowy pojazd",
+        "description": "Podstawowe dane auta. Wszystko możesz później zmienić w opcjach integracji.",
+        "data": {
+          "name": "Nazwa",
+          "plate": "Numer rejestracyjny",
+          "make": "Marka",
+          "model": "Model",
+          "year": "Rok produkcji",
+          "vin": "VIN",
+          "fuel": "Rodzaj paliwa",
+          "mileage": "Aktualny przebieg",
+          "notes": "Notatki"
+        },
+        "data_description": {
+          "name": "np. Rodzinne kombi, Auto żony"
+        }
+      },
+      "dates": {
+        "title": "Terminy",
+        "description": "Zostaw pole puste, jeśli nie znasz jeszcze daty.",
+        "data": {
+          "inspection_date": "Następne badanie techniczne",
+          "inspection_interval_months": "Badanie co ile miesięcy",
+          "oc_date": "Koniec polisy OC",
+          "oc_insurer": "Ubezpieczyciel",
+          "oc_policy": "Numer polisy",
+          "ac_date": "Koniec polisy AC (opcjonalnie)",
+          "last_service_date": "Data ostatniego przeglądu serwisowego",
+          "last_service_km": "Przebieg przy ostatnim przeglądzie",
+          "service_interval_months": "Przegląd co ile miesięcy",
+          "service_interval_km": "Przegląd co ile km",
+          "warn_days": "Ostrzegaj ile dni wcześniej",
+          "warn_km": "Ostrzegaj ile km przed przeglądem"
+        },
+        "data_description": {
+          "inspection_interval_months": "Używane przez przycisk „Badanie wykonane” do wyznaczenia kolejnej daty.",
+          "service_interval_months": "Wg zaleceń producenta; liczy się to, co nastąpi pierwsze – czas lub kilometry."
+        }
+      }
+    },
+    "error": {
+      "required": "To pole jest wymagane.",
+      "invalid_vin": "VIN musi mieć 17 znaków (bez liter I, O, Q)."
+    },
+    "abort": {
+      "already_configured": "Pojazd o tym numerze rejestracyjnym już istnieje."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Edycja pojazdu",
+        "menu_options": {
+          "vehicle": "Dane auta",
+          "dates": "Badanie, ubezpieczenie i przegląd",
+          "maintenance": "Eksploatacja (rozrząd, płyn hamulcowy, filtr, akumulator)",
+          "extras": "Gwarancja, assistance, leasing, winiety"
+        }
+      },
+      "vehicle": {
+        "title": "Dane pojazdu",
+        "data": {
+          "name": "Nazwa",
+          "plate": "Numer rejestracyjny",
+          "make": "Marka",
+          "model": "Model",
+          "year": "Rok produkcji",
+          "vin": "VIN",
+          "fuel": "Rodzaj paliwa",
+          "mileage": "Aktualny przebieg",
+          "notes": "Notatki"
+        }
+      },
+      "dates": {
+        "title": "Terminy",
+        "data": {
+          "inspection_date": "Następne badanie techniczne",
+          "inspection_interval_months": "Badanie co ile miesięcy",
+          "oc_date": "Koniec polisy OC",
+          "oc_insurer": "Ubezpieczyciel",
+          "oc_policy": "Numer polisy",
+          "ac_date": "Koniec polisy AC (opcjonalnie)",
+          "last_service_date": "Data ostatniego przeglądu serwisowego",
+          "last_service_km": "Przebieg przy ostatnim przeglądzie",
+          "service_interval_months": "Przegląd co ile miesięcy",
+          "service_interval_km": "Przegląd co ile km",
+          "warn_days": "Ostrzegaj ile dni wcześniej",
+          "warn_km": "Ostrzegaj ile km przed przeglądem"
+        }
+      },
+      "maintenance": {
+        "title": "Eksploatacja",
+        "description": "Wpisz datę i/lub przebieg ostatniej wymiany, żeby włączyć przypomnienia dla elementu. Wyczyść interwał, którego nie chcesz liczyć (np. km dla płynu hamulcowego).",
+        "sections": {
+          "timing": {
+            "name": "Rozrząd",
+            "data": {
+              "last_date": "Ostatnia wymiana (data)",
+              "last_km": "Przebieg przy ostatniej wymianie",
+              "interval_months": "Wymiana co (miesięcy)",
+              "interval_km": "Wymiana co (km)"
+            }
+          },
+          "brake_fluid": {
+            "name": "Płyn hamulcowy",
+            "data": {
+              "last_date": "Ostatnia wymiana (data)",
+              "last_km": "Przebieg przy ostatniej wymianie",
+              "interval_months": "Wymiana co (miesięcy)",
+              "interval_km": "Wymiana co (km)"
+            }
+          },
+          "cabin_filter": {
+            "name": "Filtr kabinowy",
+            "data": {
+              "last_date": "Ostatnia wymiana (data)",
+              "last_km": "Przebieg przy ostatniej wymianie",
+              "interval_months": "Wymiana co (miesięcy)",
+              "interval_km": "Wymiana co (km)"
+            }
+          },
+          "battery": {
+            "name": "Akumulator",
+            "data": {
+              "last_date": "Ostatnia wymiana (data)",
+              "last_km": "Przebieg przy ostatniej wymianie",
+              "interval_months": "Wymiana co (miesięcy)",
+              "interval_km": "Wymiana co (km)"
+            }
+          }
+        }
+      },
+      "extras": {
+        "title": "Gwarancja, assistance, leasing, winiety",
+        "description": "Daty końca. Zostaw puste to, czego nie dotyczy.",
+        "data": {
+          "warranty_date": "Koniec gwarancji",
+          "assistance_date": "Koniec assistance",
+          "leasing_date": "Koniec leasingu / ostatnia rata",
+          "vignette_cz_date": "E-winieta CZ ważna do",
+          "vignette_at_date": "Winieta AT ważna do",
+          "vignette_sk_date": "E-winieta SK ważna do"
+        }
+      }
+    },
+    "error": {
+      "required": "To pole jest wymagane.",
+      "invalid_vin": "VIN musi mieć 17 znaków (bez liter I, O, Q).",
+      "already_configured": "Inny pojazd ma już ten numer rejestracyjny."
+    }
+  },
+  "selector": {
+    "fuel": {
+      "options": {
+        "petrol": "Benzyna",
+        "diesel": "Diesel",
+        "lpg": "Benzyna + LPG",
+        "hybrid": "Hybryda",
+        "phev": "Hybryda plug-in",
+        "electric": "Elektryczny",
+        "other": "Inny"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "next_deadline": {
+        "name": "Najbliższy termin"
+      },
+      "inspection": {
+        "name": "Badanie techniczne"
+      },
+      "oc": {
+        "name": "Ubezpieczenie OC"
+      },
+      "ac": {
+        "name": "Ubezpieczenie AC"
+      },
+      "next_service": {
+        "name": "Przegląd serwisowy"
+      },
+      "service_km_left": {
+        "name": "Km do przeglądu"
+      },
+      "plate": {
+        "name": "Numer rejestracyjny"
+      },
+      "timing": {
+        "name": "Wymiana rozrządu"
+      },
+      "timing_km_left": {
+        "name": "Km do wymiany rozrządu"
+      },
+      "brake_fluid": {
+        "name": "Wymiana płynu hamulcowego"
+      },
+      "brake_fluid_km_left": {
+        "name": "Km do wymiany płynu hamulcowego"
+      },
+      "cabin_filter": {
+        "name": "Wymiana filtra kabinowego"
+      },
+      "cabin_filter_km_left": {
+        "name": "Km do wymiany filtra kabinowego"
+      },
+      "battery": {
+        "name": "Wymiana akumulatora"
+      },
+      "battery_km_left": {
+        "name": "Km do wymiany akumulatora"
+      },
+      "warranty": {
+        "name": "Gwarancja"
+      },
+      "assistance": {
+        "name": "Assistance"
+      },
+      "leasing": {
+        "name": "Leasing"
+      },
+      "vignette_cz": {
+        "name": "Winieta CZ"
+      },
+      "vignette_at": {
+        "name": "Winieta AT"
+      },
+      "vignette_sk": {
+        "name": "Winieta SK"
+      }
+    },
+    "number": {
+      "mileage": {
+        "name": "Przebieg"
+      }
+    },
+    "button": {
+      "service_done": {
+        "name": "Przegląd wykonany"
+      },
+      "inspection_done": {
+        "name": "Badanie wykonane"
+      },
+      "renew_oc": {
+        "name": "Odnów OC (+12 mies.)"
+      },
+      "renew_ac": {
+        "name": "Odnów AC (+12 mies.)"
+      },
+      "timing_done": {
+        "name": "Rozrząd wymieniony"
+      },
+      "brake_fluid_done": {
+        "name": "Płyn hamulcowy wymieniony"
+      },
+      "cabin_filter_done": {
+        "name": "Filtr kabinowy wymieniony"
+      },
+      "battery_done": {
+        "name": "Akumulator wymieniony"
+      }
+    },
+    "binary_sensor": {
+      "attention": {
+        "name": "Wymaga uwagi"
+      }
+    },
+    "calendar": {
+      "deadlines": {
+        "name": "Terminy"
+      }
+    }
+  }
+}

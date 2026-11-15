@@ -1,0 +1,44 @@
+name: Wydanie
+
+# Tworzy wydanie (tag vX.Y.Z), gdy w manifest.json pojawi się nowa wersja.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Odczytaj wersję
+        id: ver
+        run: |
+          V=$(jq -r .version custom_components/vehicle_registry/manifest.json)
+          echo "version=$V" >> "$GITHUB_OUTPUT"
+          if git rev-parse "v$V" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Opis zmian
+        if: steps.ver.outputs.exists == 'false'
+        run: |
+          PREV=$(git describe --tags --abbrev=0 2>/dev/null || true)
+          if [ -n "$PREV" ]; then RANGE="$PREV..HEAD"; else RANGE="HEAD"; fi
+          git log $RANGE --no-merges --pretty=format:'- %s' > notes.md
+
+      - name: Utwórz wydanie
+        if: steps.ver.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          V=${{ steps.ver.outputs.version }}
+          gh release create "v$V" --title "Kartoteka pojazdów $V" --notes-file notes.md --target "$GITHUB_SHA"

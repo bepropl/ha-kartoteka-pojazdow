@@ -1,0 +1,15 @@
+{
+  "domain": "vehicle_registry",
+  "name": "Kartoteka pojazdów",
+  "codeowners": [
+    "@bepropl"
+  ],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/bepropl/ha-kartoteka-pojazdow",
+  "integration_type": "device",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/bepropl/ha-kartoteka-pojazdow/issues",
+  "requirements": [],
+  "version": "0.2.0"
+}

@@ -1,0 +1,114 @@
+{
+  "entity": {
+    "sensor": {
+      "next_deadline": {
+        "default": "mdi:calendar-alert"
+      },
+      "inspection": {
+        "default": "mdi:clipboard-check-outline"
+      },
+      "oc": {
+        "default": "mdi:shield-car"
+      },
+      "ac": {
+        "default": "mdi:shield-check-outline"
+      },
+      "next_service": {
+        "default": "mdi:wrench-clock"
+      },
+      "service_km_left": {
+        "default": "mdi:map-marker-distance"
+      },
+      "plate": {
+        "default": "mdi:card-text-outline"
+      },
+      "timing": {
+        "default": "mdi:cog-sync"
+      },
+      "timing_km_left": {
+        "default": "mdi:map-marker-distance"
+      },
+      "brake_fluid": {
+        "default": "mdi:car-brake-fluid-level"
+      },
+      "brake_fluid_km_left": {
+        "default": "mdi:map-marker-distance"
+      },
+      "cabin_filter": {
+        "default": "mdi:air-filter"
+      },
+      "cabin_filter_km_left": {
+        "default": "mdi:map-marker-distance"
+      },
+      "battery": {
+        "default": "mdi:car-battery"
+      },
+      "battery_km_left": {
+        "default": "mdi:map-marker-distance"
+      },
+      "warranty": {
+        "default": "mdi:certificate-outline"
+      },
+      "assistance": {
+        "default": "mdi:tow-truck"
+      },
+      "leasing": {
+        "default": "mdi:file-sign"
+      },
+      "vignette_cz": {
+        "default": "mdi:highway"
+      },
+      "vignette_at": {
+        "default": "mdi:highway"
+      },
+      "vignette_sk": {
+        "default": "mdi:highway"
+      }
+    },
+    "number": {
+      "mileage": {
+        "default": "mdi:counter"
+      }
+    },
+    "button": {
+      "service_done": {
+        "default": "mdi:wrench-check"
+      },
+      "inspection_done": {
+        "default": "mdi:clipboard-check"
+      },
+      "renew_oc": {
+        "default": "mdi:shield-refresh"
+      },
+      "renew_ac": {
+        "default": "mdi:shield-refresh-outline"
+      },
+      "timing_done": {
+        "default": "mdi:check-circle-outline"
+      },
+      "brake_fluid_done": {
+        "default": "mdi:check-circle-outline"
+      },
+      "cabin_filter_done": {
+        "default": "mdi:check-circle-outline"
+      },
+      "battery_done": {
+        "default": "mdi:check-circle-outline"
+      }
+    },
+    "binary_sensor": {
+      "attention": {
+        "default": "mdi:car-wrench",
+        "state": {
+          "off": "mdi:car-outline",
+          "on": "mdi:car-wrench"
+        }
+      }
+    },
+    "calendar": {
+      "deadlines": {
+        "default": "mdi:calendar-month"
+      }
+    }
+  }
+}

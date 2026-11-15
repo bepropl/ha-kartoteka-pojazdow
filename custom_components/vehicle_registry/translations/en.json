@@ -1,0 +1,277 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "New vehicle",
+        "description": "Basic vehicle data. You can change everything later in the integration options.",
+        "data": {
+          "name": "Name",
+          "plate": "Registration plate",
+          "make": "Make",
+          "model": "Model",
+          "year": "Production year",
+          "vin": "VIN",
+          "fuel": "Fuel type",
+          "mileage": "Current mileage",
+          "notes": "Notes"
+        },
+        "data_description": {
+          "name": "e.g. Family wagon, Wife's car"
+        }
+      },
+      "dates": {
+        "title": "Deadlines",
+        "description": "Leave a field empty if you don't know the date yet.",
+        "data": {
+          "inspection_date": "Next technical inspection",
+          "inspection_interval_months": "Inspection interval",
+          "oc_date": "Liability insurance (OC) ends",
+          "oc_insurer": "Insurer",
+          "oc_policy": "Policy number",
+          "ac_date": "Comprehensive insurance (AC) ends",
+          "last_service_date": "Last service date",
+          "last_service_km": "Mileage at last service",
+          "service_interval_months": "Service interval (months)",
+          "service_interval_km": "Service interval (km)",
+          "warn_days": "Warn this many days before",
+          "warn_km": "Warn this many km before service"
+        },
+        "data_description": {
+          "inspection_interval_months": "Used by the 'Inspection done' button to set the next date.",
+          "service_interval_months": "Per manufacturer's schedule; whichever comes first – time or distance."
+        }
+      }
+    },
+    "error": {
+      "required": "This field is required.",
+      "invalid_vin": "VIN must have 17 characters (letters I, O, Q are not allowed)."
+    },
+    "abort": {
+      "already_configured": "A vehicle with this registration plate already exists."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Edit vehicle",
+        "menu_options": {
+          "vehicle": "Vehicle data",
+          "dates": "Inspection, insurance and service",
+          "maintenance": "Wear parts (timing, brake fluid, filter, battery)",
+          "extras": "Warranty, assistance, leasing, vignettes"
+        }
+      },
+      "vehicle": {
+        "title": "Vehicle data",
+        "data": {
+          "name": "Name",
+          "plate": "Registration plate",
+          "make": "Make",
+          "model": "Model",
+          "year": "Production year",
+          "vin": "VIN",
+          "fuel": "Fuel type",
+          "mileage": "Current mileage",
+          "notes": "Notes"
+        }
+      },
+      "dates": {
+        "title": "Deadlines",
+        "data": {
+          "inspection_date": "Next technical inspection",
+          "inspection_interval_months": "Inspection interval",
+          "oc_date": "Liability insurance (OC) ends",
+          "oc_insurer": "Insurer",
+          "oc_policy": "Policy number",
+          "ac_date": "Comprehensive insurance (AC) ends",
+          "last_service_date": "Last service date",
+          "last_service_km": "Mileage at last service",
+          "service_interval_months": "Service interval (months)",
+          "service_interval_km": "Service interval (km)",
+          "warn_days": "Warn this many days before",
+          "warn_km": "Warn this many km before service"
+        }
+      },
+      "maintenance": {
+        "title": "Wear parts",
+        "description": "Fill in the date and/or mileage of the last replacement to enable reminders for a part. Clear an interval to ignore it (e.g. km for brake fluid).",
+        "sections": {
+          "timing": {
+            "name": "Timing belt / chain",
+            "data": {
+              "last_date": "Last replaced (date)",
+              "last_km": "Mileage at last replacement",
+              "interval_months": "Replace every (months)",
+              "interval_km": "Replace every (km)"
+            }
+          },
+          "brake_fluid": {
+            "name": "Brake fluid",
+            "data": {
+              "last_date": "Last replaced (date)",
+              "last_km": "Mileage at last replacement",
+              "interval_months": "Replace every (months)",
+              "interval_km": "Replace every (km)"
+            }
+          },
+          "cabin_filter": {
+            "name": "Cabin filter",
+            "data": {
+              "last_date": "Last replaced (date)",
+              "last_km": "Mileage at last replacement",
+              "interval_months": "Replace every (months)",
+              "interval_km": "Replace every (km)"
+            }
+          },
+          "battery": {
+            "name": "Battery",
+            "data": {
+              "last_date": "Last replaced (date)",
+              "last_km": "Mileage at last replacement",
+              "interval_months": "Replace every (months)",
+              "interval_km": "Replace every (km)"
+            }
+          }
+        }
+      },
+      "extras": {
+        "title": "Warranty, assistance, leasing, vignettes",
+        "description": "End dates. Leave empty what doesn't apply.",
+        "data": {
+          "warranty_date": "Warranty ends",
+          "assistance_date": "Assistance ends",
+          "leasing_date": "Leasing ends / last instalment",
+          "vignette_cz_date": "Czech e-vignette valid until",
+          "vignette_at_date": "Austrian vignette valid until",
+          "vignette_sk_date": "Slovak e-vignette valid until"
+        }
+      }
+    },
+    "error": {
+      "required": "This field is required.",
+      "invalid_vin": "VIN must have 17 characters (letters I, O, Q are not allowed).",
+      "already_configured": "Another vehicle already uses this registration plate."
+    }
+  },
+  "selector": {
+    "fuel": {
+      "options": {
+        "petrol": "Petrol",
+        "diesel": "Diesel",
+        "lpg": "Petrol + LPG",
+        "hybrid": "Hybrid",
+        "phev": "Plug-in hybrid",
+        "electric": "Electric",
+        "other": "Other"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "next_deadline": {
+        "name": "Next deadline"
+      },
+      "inspection": {
+        "name": "Technical inspection"
+      },
+      "oc": {
+        "name": "Liability insurance (OC)"
+      },
+      "ac": {
+        "name": "Comprehensive insurance (AC)"
+      },
+      "next_service": {
+        "name": "Service"
+      },
+      "service_km_left": {
+        "name": "Km to service"
+      },
+      "plate": {
+        "name": "Registration plate"
+      },
+      "timing": {
+        "name": "Timing belt replacement"
+      },
+      "timing_km_left": {
+        "name": "Km to timing belt"
+      },
+      "brake_fluid": {
+        "name": "Brake fluid replacement"
+      },
+      "brake_fluid_km_left": {
+        "name": "Km to brake fluid"
+      },
+      "cabin_filter": {
+        "name": "Cabin filter replacement"
+      },
+      "cabin_filter_km_left": {
+        "name": "Km to cabin filter"
+      },
+      "battery": {
+        "name": "Battery replacement"
+      },
+      "battery_km_left": {
+        "name": "Km to battery"
+      },
+      "warranty": {
+        "name": "Warranty"
+      },
+      "assistance": {
+        "name": "Assistance"
+      },
+      "leasing": {
+        "name": "Leasing"
+      },
+      "vignette_cz": {
+        "name": "Vignette CZ"
+      },
+      "vignette_at": {
+        "name": "Vignette AT"
+      },
+      "vignette_sk": {
+        "name": "Vignette SK"
+      }
+    },
+    "number": {
+      "mileage": {
+        "name": "Mileage"
+      }
+    },
+    "button": {
+      "service_done": {
+        "name": "Service done"
+      },
+      "inspection_done": {
+        "name": "Inspection done"
+      },
+      "renew_oc": {
+        "name": "Renew OC (+12 months)"
+      },
+      "renew_ac": {
+        "name": "Renew AC (+12 months)"
+      },
+      "timing_done": {
+        "name": "Timing belt replaced"
+      },
+      "brake_fluid_done": {
+        "name": "Brake fluid replaced"
+      },
+      "cabin_filter_done": {
+        "name": "Cabin filter replaced"
+      },
+      "battery_done": {
+        "name": "Battery replaced"
+      }
+    },
+    "binary_sensor": {
+      "attention": {
+        "name": "Needs attention"
+      }
+    },
+    "calendar": {
+      "deadlines": {
+        "name": "Deadlines"
+      }
+    }
+  }
+}
